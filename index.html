@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Tracker</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+    <h1>Job Application Tracker</h1>
+    <p>Organize your job search and track every opportunity.</p>
+</header>
+
+<main class="container">
+
+    <section class="stats-grid">
+        <div class="stat-card">
+            <span>Total Applications</span>
+            <strong id="totalCount">0</strong>
+        </div>
+
+        <div class="stat-card applied-stat">
+            <span>Applied</span>
+            <strong id="appliedCount">0</strong>
+        </div>
+
+        <div class="stat-card interview-stat">
+            <span>Interviews</span>
+            <strong id="interviewCount">0</strong>
+        </div>
+
+        <div class="stat-card selected-stat">
+            <span>Selected</span>
+            <strong id="selectedCount">0</strong>
+        </div>
+    </section>
+
+    <section class="panel">
+        <h2 id="formTitle">Add Job Application</h2>
+
+        <form id="applicationForm">
+
+            <div class="form-grid">
+                <div>
+                    <label for="company">Company Name</label>
+                    <input type="text" id="company"
+                           placeholder="Enter company name" required>
+                </div>
+
+                <div>
+                    <label for="role">Job Role</label>
+                    <input type="text" id="role"
+                           placeholder="Enter job role" required>
+                </div>
+
+                <div>
+                    <label for="applicationDate">Application Date</label>
+                    <input type="date" id="applicationDate" required>
+                </div>
+
+                <div>
+                    <label for="interviewDate">Interview Date</label>
+                    <input type="date" id="interviewDate">
+                </div>
+
+                <div>
+                    <label for="status">Application Status</label>
+                    <select id="status">
+                        <option value="Applied">Applied</option>
+                        <option value="Interview">Interview</option>
+                        <option value="Selected">Selected</option>
+                        <option value="Rejected">Rejected</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="link">Job Link (Optional)</label>
+                    <input type="url" id="link"
+                           placeholder="https://example.com/job">
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="primary-btn" id="submitBtn">
+                    Add Application
+                </button>
+
+                <button type="button" class="secondary-btn"
+                        id="cancelEditBtn" hidden>
+                    Cancel Edit
+                </button>
+            </div>
+
+        </form>
+    </section>
+
+    <section class="panel">
+        <div class="list-heading">
+            <h2>My Applications</h2>
+
+            <div class="filters">
+                <input type="search" id="searchInput"
+                       placeholder="Search company or role">
+
+                <select id="statusFilter">
+                    <option value="All">All Statuses</option>
+                    <option value="Applied">Applied</option>
+                    <option value="Interview">Interview</option>
+                    <option value="Selected">Selected</option>
+                    <option value="Rejected">Rejected</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Company</th>
+                        <th>Job Role</th>
+                        <th>Applied Date</th>
+                        <th>Interview Date</th>
+                        <th>Status</th>
+                        <th>Job Link</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody id="applicationList">
+                    <tr>
+                        <td colspan="7" class="empty">
+                            No applications added yet.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    Job Application Tracker | HTML CSS JavaScript
+</footer>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
